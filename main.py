@@ -36,13 +36,13 @@ class WeatherInput(BaseModel):
     sndp: float
 
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def read_root():
     return {"message": "Hello from the API!"}
 
 
 # Root endpoint
-@api_router.get("/")
+@api_router.get("/", include_in_schema=False)
 def read_root():
     return {"message": "Hello from the API!"}
 
