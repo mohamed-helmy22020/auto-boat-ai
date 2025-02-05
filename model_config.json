@@ -1,0 +1,93 @@
+{
+    "input_features": [
+        {
+            "name": "mo",
+            "description": "month",
+            "unit": "month"
+        },
+        {
+            "name": "da",
+            "description": "day",
+            "unit": "day"
+        },
+        {
+            "name": "temp",
+            "description": "Mean temperature of the day",
+            "unit": "Celsius"
+        },
+        {
+            "name": "dewp",
+            "description": "Mean dew point temperature",
+            "unit": "Celsius"
+        },
+        {
+            "name": "slp",
+            "description": "Mean sea level pressure",
+            "unit": "Pascals (Pa)"
+        },
+        {
+            "name": "stp",
+            "description": "Mean station pressure",
+            "unit": "Pascals (Pa)"
+        },
+        {
+            "name": "visib",
+            "description": "Mean visibility",
+            "unit": "Kilometers (km)"
+        },
+        {
+            "name": "wdsp",
+            "description": "Mean wind speed",
+            "unit": "Meters per second (m/s)"
+        },
+        {
+            "name": "mxpsd",
+            "description": "Maximum sustained wind speed for the day",
+            "unit": "Meters per second (m/s)"
+        },
+        {
+            "name": "gust",
+            "description": "Maximum wind gust (strongest recorded wind burst)",
+            "unit": "Meters per second (m/s)"
+        },
+        {
+            "name": "prcp",
+            "description": "Total precipitation (rain/snow) for the day",
+            "unit": "Millimeters (mm)"
+        },
+        {
+            "name": "sndp",
+            "description": "Snow depth (measured snow accumulation)",
+            "unit": "Millimeters (mm)"
+        }
+    ],
+    "preprocessing": {
+        "scaler": "MinMaxScaler"
+    },
+    "models": {
+        "fog": {
+            "model_path": "AIModel/fog_model.onnx",
+            "output": "fog"
+        },
+        "rain_drizzle": {
+            "model_path": "AIModel/rain_drizzle_model.onnx",
+            "output": "rain_drizzle"
+        },
+        "snow_ice_pellets": {
+            "model_path": "AIModel/snow_ice_pellets_model.onnx",
+            "output": "snow_ice_pellets"
+        },
+        "hail": {
+            "model_path": "AIModel/hail_model.onnx",
+            "output": "hail"
+        },
+        "thunder": {
+            "model_path": "AIModel/thunder_model.onnx",
+            "output": "thunder"
+        },
+        "tornado_funnel_cloud": {
+            "model_path": "AIModel/tornado_funnel_cloud_model.onnx",
+            "output": "tornado_funnel_cloud"
+        }
+    }
+}
